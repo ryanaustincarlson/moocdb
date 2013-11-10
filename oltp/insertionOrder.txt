@@ -1,0 +1,16 @@
+users
+sources
+texts
+source_dimension
+time_dimension
+user_dimension
+forums
+threads
+posts
+text_annotations
+thread_tags
+post_user_references
+post_votes
+user_info
+user_source
+user_data_measure

@@ -1,0 +1,10 @@
+user_dimension
+source_dimension
+time_dimension
+location_dimension
+texts
+forums
+posts_measure
+text_annotations
+user_data_measure
+post_votes_measure
