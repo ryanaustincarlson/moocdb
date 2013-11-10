@@ -9,4 +9,5 @@ Things to know further
 ----------------------
 
 * What are requirements on text annotations?
+* Doesn't include the concept of "follows topic/people" yet
 
