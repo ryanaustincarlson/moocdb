@@ -1,0 +1,12 @@
+users
+texts
+sources
+forums
+threads
+posts
+text_annotations
+thread_tags
+post_user_references
+post_votes
+user_info
+user_source
