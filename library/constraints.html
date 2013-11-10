@@ -31,7 +31,7 @@
 <div class='indent'>
 <table width='100%'>
 <tr><td class='container' valign='bottom'><b>
-18 Foreign Key Constraints:</b>
+21 Foreign Key Constraints:</b>
 </td><td class='container' align='right'>
 <table>
   <tr><td class='container' align='right' valign='top'><a href='http://sourceforge.net' target='_blank'><img src='http://sourceforge.net/sflogo.php?group_id=137197&amp;type=1' alt='SourceForge.net' border='0' height='31' width='88'></a></td></tr>
@@ -78,44 +78,58 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
+  <td class='detail'>forums_source_id_fkey</td>
+  <td class='detail'><a href='tables/forums.html'>forums</a>.source_id</td>
+  <td class='detail'><a href='tables/sources.html'>sources</a>.id</td>
+  <td class='detail'><span title='Restrict delete:
+ Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
+ </tr>
+  <tr class='even'>
   <td class='detail'>post_user_references_post_id_fkey</td>
   <td class='detail'><a href='tables/post_user_references.html'>post_user_references</a>.post_id</td>
   <td class='detail'><a href='tables/posts.html'>posts</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='even'>
+  <tr class='odd'>
   <td class='detail'>post_user_references_user_id_fkey</td>
   <td class='detail'><a href='tables/post_user_references.html'>post_user_references</a>.user_id</td>
   <td class='detail'><a href='tables/users.html'>users</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='odd'>
+  <tr class='even'>
   <td class='detail'>post_votes_post_id_fkey</td>
   <td class='detail'><a href='tables/post_votes.html'>post_votes</a>.post_id</td>
   <td class='detail'><a href='tables/posts.html'>posts</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='even'>
+  <tr class='odd'>
   <td class='detail'>post_votes_user_id_fkey</td>
   <td class='detail'><a href='tables/post_votes.html'>post_votes</a>.user_id</td>
   <td class='detail'><a href='tables/users.html'>users</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='odd'>
+  <tr class='even'>
   <td class='detail'>posts_created_user_id_fkey</td>
   <td class='detail'><a href='tables/posts.html'>posts</a>.created_user_id</td>
   <td class='detail'><a href='tables/users.html'>users</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='even'>
+  <tr class='odd'>
   <td class='detail'>posts_parent_post_id_fkey</td>
   <td class='detail'><a href='tables/posts.html'>posts</a>.parent_post_id</td>
   <td class='detail'><a href='tables/posts.html'>posts</a>.id</td>
+  <td class='detail'><span title='Restrict delete:
+ Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
+ </tr>
+  <tr class='even'>
+  <td class='detail'>posts_source_id_fkey</td>
+  <td class='detail'><a href='tables/posts.html'>posts</a>.source_id</td>
+  <td class='detail'><a href='tables/sources.html'>sources</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
@@ -155,41 +169,48 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
+  <td class='detail'>threads_source_id_fkey</td>
+  <td class='detail'><a href='tables/threads.html'>threads</a>.source_id</td>
+  <td class='detail'><a href='tables/sources.html'>sources</a>.id</td>
+  <td class='detail'><span title='Restrict delete:
+ Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
+ </tr>
+  <tr class='odd'>
   <td class='detail'>threads_text_id_fkey</td>
   <td class='detail'><a href='tables/threads.html'>threads</a>.text_id</td>
   <td class='detail'><a href='tables/texts.html'>texts</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='odd'>
+  <tr class='even'>
   <td class='detail'>threads_user_id_fkey</td>
   <td class='detail'><a href='tables/threads.html'>threads</a>.user_id</td>
   <td class='detail'><a href='tables/users.html'>users</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='even'>
+  <tr class='odd'>
   <td class='detail'>user_info_source_id_fkey</td>
   <td class='detail'><a href='tables/user_info.html'>user_info</a>.source_id</td>
   <td class='detail'><a href='tables/sources.html'>sources</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='odd'>
+  <tr class='even'>
   <td class='detail'>user_info_user_id_fkey</td>
   <td class='detail'><a href='tables/user_info.html'>user_info</a>.user_id</td>
   <td class='detail'><a href='tables/users.html'>users</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='even'>
+  <tr class='odd'>
   <td class='detail'>user_source_source_id_fkey</td>
   <td class='detail'><a href='tables/user_source.html'>user_source</a>.source_id</td>
   <td class='detail'><a href='tables/sources.html'>sources</a>.id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
-  <tr class='odd'>
+  <tr class='even'>
   <td class='detail'>user_source_user_id_fkey</td>
   <td class='detail'><a href='tables/user_source.html'>user_source</a>.user_id</td>
   <td class='detail'><a href='tables/users.html'>users</a>.id</td>

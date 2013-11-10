@@ -9,7 +9,10 @@
          <column autoUpdated="false" digits="0" id="1" name="parent_forum_id" nullable="true" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="forums_parent_forum_id_fkey" implied="false" onDeleteCascade="false" table="forums"/>
          </column>
-         <column autoUpdated="false" digits="0" id="2" name="name" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="source_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="forums_source_id_fkey" implied="false" onDeleteCascade="false" table="sources"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="true" remarks="" size="2147483647" type="text"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="forums_pkey" unique="true">
             <column ascending="true" name="id"/>
@@ -58,11 +61,14 @@
          <column autoUpdated="false" digits="0" id="3" name="parent_post_id" nullable="true" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="posts_parent_post_id_fkey" implied="false" onDeleteCascade="false" table="posts"/>
          </column>
-         <column autoUpdated="false" digits="0" id="4" name="text_id" nullable="true" remarks="" size="10" type="int4">
+         <column autoUpdated="false" digits="0" id="4" name="source_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="posts_source_id_fkey" implied="false" onDeleteCascade="false" table="sources"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="text_id" nullable="true" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="posts_text_id_fkey" implied="false" onDeleteCascade="false" table="texts"/>
          </column>
-         <column autoUpdated="false" digits="6" id="5" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
-         <column autoUpdated="false" digits="6" id="6" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="6" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="7" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="posts_pkey" unique="true">
             <column ascending="true" name="id"/>
@@ -70,6 +76,9 @@
       </table>
       <table name="sources" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('sources_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="source_id" foreignKey="forums_source_id_fkey" implied="false" onDeleteCascade="false" table="forums"/>
+            <child column="source_id" foreignKey="posts_source_id_fkey" implied="false" onDeleteCascade="false" table="posts"/>
+            <child column="source_id" foreignKey="threads_source_id_fkey" implied="false" onDeleteCascade="false" table="threads"/>
             <child column="source_id" foreignKey="user_info_source_id_fkey" implied="false" onDeleteCascade="false" table="user_info"/>
             <child column="source_id" foreignKey="user_source_source_id_fkey" implied="false" onDeleteCascade="false" table="user_source"/>
          </column>
@@ -131,8 +140,11 @@
          <column autoUpdated="false" digits="0" id="3" name="text_id" nullable="true" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="threads_text_id_fkey" implied="false" onDeleteCascade="false" table="texts"/>
          </column>
-         <column autoUpdated="false" digits="6" id="4" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
-         <column autoUpdated="false" digits="6" id="5" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="4" name="source_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="threads_source_id_fkey" implied="false" onDeleteCascade="false" table="sources"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="5" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="6" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="threads_pkey" unique="true">
             <column ascending="true" name="id"/>

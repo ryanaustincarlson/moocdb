@@ -42,10 +42,11 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="thread_id" COLSPAN="3" ALIGN="LEFT">thread_id</TD></TR>
       <TR><TD PORT="created_user_id" COLSPAN="3" ALIGN="LEFT">created_user_id</TD></TR>
       <TR><TD PORT="parent_post_id" COLSPAN="3" ALIGN="LEFT">parent_post_id</TD></TR>
+      <TR><TD PORT="source_id" COLSPAN="3" ALIGN="LEFT">source_id</TD></TR>
       <TR><TD PORT="text_id" COLSPAN="3" ALIGN="LEFT">text_id</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="posts.html"
     tooltip="posts"

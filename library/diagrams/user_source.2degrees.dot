@@ -19,17 +19,31 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
+  "forums":"elipses":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "post_user_references":"elipses":w -> "posts":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "post_user_references":"elipses":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "post_votes":"elipses":w -> "posts":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "post_votes":"elipses":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "posts":"elipses":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "posts":"elipses":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "posts":"elipses":w -> "threads":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "threads":"elipses":w -> "forums":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "threads":"elipses":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "threads":"elipses":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "user_info":"elipses":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "user_info":"elipses":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "user_source":"source_id":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "user_source":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "forums" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">forums</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="forums.html"
+    tooltip="forums"
+  ];
   "post_user_references" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -55,7 +69,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">posts</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="posts.html"
     tooltip="posts"
@@ -66,7 +80,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">sources</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="sources.html"
     tooltip="sources"
@@ -76,7 +90,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">threads</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="threads.html"
     tooltip="threads"

@@ -36,6 +36,7 @@ create table user_info (
 create table forums (
   id serial primary key,
   parent_forum_id int references forums(id),
+  source_id int references sources(id),
   name text
 );
 
@@ -65,6 +66,7 @@ create table threads (
   -- Might not necessarily be attached to a forum.
   forum_id int references forums(id),
   text_id int references texts(id),
+  source_id int references sources(id),
   created_at timestamp,
   updated_at timestamp
 );
@@ -85,6 +87,7 @@ create table posts (
   thread_id int references threads(id),
   created_user_id int references users(id),
   parent_post_id int references posts(id),
+  source_id int references sources(id),
   text_id int references texts(id),
   created_at timestamp,
   updated_at timestamp
@@ -104,9 +107,6 @@ create table post_votes (
   vote int,
   created_at timestamp
 );
-
-
-
 
 
 
