@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 usage() {
   echo -e 'Drops the DB and recreates the schema.'
