@@ -7,4 +7,9 @@ Massive Open Online Courses (MOOCs) are becoming an increasingly popular at-a-di
 How we organize all this data is critically important. This work aims to construct a general, useful, and extensible framework for managing and analyzing all of the data that we might get from a MOOC (and other online communities).
 
 ## Getting Started
-TODO
+
+### Installing PG8000
+
+Since our raw scraped files are in json and csv, we are using python to manipulate them and prepare them for the database. Python is great at manipulating these files, but can't talk directly to Postgres. There are a ton of drivers that link Python to Postgres, but we chose PG8000 for its transparency. You just have to write SQL code in python and it'll execute for you. While this binds us to Postgres, it lowers the barrier to entry, too. 
+
+You can install PG8000 with pip: `pip install pg8000`.
