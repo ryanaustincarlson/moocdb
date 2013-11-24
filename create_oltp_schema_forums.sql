@@ -37,7 +37,8 @@ create table forums (
   id serial primary key,
   parent_forum_id int references forums(id),
   source_id int references sources(id),
-  name text
+  name text,
+  external_id int
 );
 
 -- List of raw texts in Unicode
@@ -84,12 +85,14 @@ create table thread_tags (
 create table posts (
   id serial primary key,
   -- Doesn't always have to have a thread, for instance twitter.
-  thread_id int references threads(id),
+  -- thread_id int references threads(id),
+  forum_id int references forums(id),
   user_id int references users(id),
   parent_post_id int references posts(id),
   source_id int references sources(id),
   text_id int references texts(id),
-  created_at timestamp,
+  created_at int,
+  -- created_at timestamp,
   updated_at timestamp
 );
 
@@ -107,6 +110,4 @@ create table post_votes (
   vote int,
   created_at timestamp
 );
-
-
 
