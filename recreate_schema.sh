@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eu
+set -u
 
 usage() {
   echo -e 'Drops the DB and recreates the schema.'
