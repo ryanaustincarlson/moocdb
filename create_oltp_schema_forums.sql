@@ -28,7 +28,7 @@ create table user_info (
   id serial primary key,
   source_id int references sources(id),
   user_id int references users(id),
-  key text,
+  label text,
   value text
 );
 
