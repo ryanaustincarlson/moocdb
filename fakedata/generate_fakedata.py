@@ -131,7 +131,7 @@ def main():
     def write_data(json_obj, fname):
         with open(fname, 'w') as f:
             json.dump(json_obj, f, indent=2)
-        sys.stderr.write('wrote {}\n'.format(fname))
+        sys.stderr.write('wrote {0}\n'.format(fname))
 
     write_data(sources, 'sources.json')
     write_data(users, 'users.json')

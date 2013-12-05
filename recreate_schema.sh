@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eu
+
 usage() {
   echo -e 'Drops the DB and recreates the schema.'
   echo -e 'Usage:'
@@ -10,6 +12,7 @@ recreate_oltp() {
   echo "drop database moocdb" | mysql
   echo "create database moocdb" | mysql
   mysql -D moocdb < create_oltp_schema_forums.sql
+  # ./setup_db_permissions.sh
 }
 
 recreate_olap() {
