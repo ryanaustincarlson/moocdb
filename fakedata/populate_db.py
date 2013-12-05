@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
-import json, sys
+import sys
+try:
+    import json
+except:
+    import simplejson as json
 from pprint import pprint
 
 import dbutils
@@ -131,10 +135,12 @@ def main():
 
     def load_data(fname):
         try:
-            with open(fname) as f:
-                return json.load(f)
+            f = open(fname)
+            data = json.load(f)
+            f.close()
+            return data
         except:
-            sys.stderr.write("Couldn't find \"{}\", did you run ./generate_fakedata?\n".format(fname))
+            sys.stderr.write("Couldn't find \"" + fname + "\", did you run ./generate_fakedata?\n")
             sys.exit(1)
     sources = load_data('sources.json')
     users = load_data('users.json')

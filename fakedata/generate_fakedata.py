@@ -2,7 +2,11 @@
 
 import sys, random
 import datetime, calendar
-import csv, json
+import csv
+try:
+    import json
+except:
+    import simplejson as json
 from pprint import pprint
 
 NUM_USERS = 5
@@ -11,13 +15,14 @@ MAX_NUM_POSTS = 5
 random.seed(10) # NOTE: means we'll get the same psedo-random list each time
 
 def get_names():
-    with open('baby-names.csv', 'r') as baby_file:
-        names = set()
+    baby_file = open('baby-names.csv', 'r')
+    names = set()
 
-        reader = csv.reader(baby_file)
-        header = reader.next()
-        for year, name, percent, gender in reader:
-            names.add(name)
+    reader = csv.reader(baby_file)
+    header = reader.next()
+    for year, name, percent, gender in reader:
+        names.add(name)
+    baby_file.close()
     namelist = list(names)
 
     random.shuffle(namelist)
@@ -46,8 +51,9 @@ def get_post_ids():
 
 def get_words():
     # read from The War of the Worlds
-    with open('war-of-the-worlds.txt', 'r') as f:
-        book = f.read()
+    f = open('war-of-the-worlds.txt', 'r') 
+    book = f.read()
+    f.close()
     words = book.split()
 
     snippets = []
@@ -129,9 +135,10 @@ def main():
 
 
     def write_data(json_obj, fname):
-        with open(fname, 'w') as f:
-            json.dump(json_obj, f, indent=2)
-        sys.stderr.write('wrote {0}\n'.format(fname))
+        f = open(fname, 'w') 
+        json.dump(json_obj, f, indent=2)
+        f.close()
+        sys.stderr.write('wrote ' + fname + '\n')
 
     write_data(sources, 'sources.json')
     write_data(users, 'users.json')
