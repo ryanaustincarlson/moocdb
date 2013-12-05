@@ -69,13 +69,13 @@ def add_users(cursor, users, source_id):
         dbutils.insert_into_table(
                 cursor,
                 'user_info',
-                ['source_id', 'user_id', 'key', 'value'],
+                ['source_id', 'user_id', 'label', 'value'],
                 [source_id, user_id, 'registered_timestamp', registration])
 
         dbutils.insert_into_table(
                 cursor,
                 'user_info',
-                ['source_id', 'user_id', 'key', 'value'],
+                ['source_id', 'user_id', 'label', 'value'],
                 [source_id, user_id, 'last_seen_timestamp', last_seen])
 
     return user_ids
