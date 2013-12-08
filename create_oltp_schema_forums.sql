@@ -55,7 +55,8 @@ create table text_annotations (
   text_id int references texts(id),
   start_pos int,
   end_pos int,
-  annotation_type text
+  annotation_type text,
+  annotator text
 );
 
 -- Could have a separate table for links if the
