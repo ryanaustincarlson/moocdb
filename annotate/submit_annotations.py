@@ -20,8 +20,10 @@ def run(annotation_dir):
 
     annotation_fnames = [os.path.join(annotation_dir , f) for f in os.listdir(annotation_dir ) if f.endswith('.ann')]
     annotations = []
+    text_ids = set()
     for fname in annotation_fnames:
         text_id = int(os.path.basename(fname).replace('.ann', ''))
+        text_ids.add(text_id)
         f = open(fname)
         for line in f:
             annotations.append(BratAnnotation(line, text_id, username))
@@ -29,6 +31,15 @@ def run(annotation_dir):
 
     db = dbutils.get_database_connection()
     cursor = db.cursor()
+
+    # first, remove all annotations by this (user, text_id) pair
+    for text_id in text_ids:
+        cursor.execute("SELECT id FROM text_annotations WHERE annotator = '%s' AND text_id = '%d'" % (username, text_id))
+        ids = cursor.fetchall()
+        for a_id in ids:
+            cursor.execute("DELETE FROM text_annotations WHERE id = '%s'" % a_id)
+    db.commit()
+
     for annotation in annotations:
         annotation.insert(cursor)
     db.commit()
