@@ -1,22 +1,27 @@
 import MySQLdb
 import sys
 
-SOURCE_COURSERA = 1
-
 #def get_database_connection(host='localhost', user='rcarlson', password='', database='moocdb'):
-def get_database_connection(unix_sock='/var/tmp/mysql.sock', user='rcarlson', password='', database='moocdb'):
+def get_database_connection(host='localhost', unix_sock='/var/tmp/mysql.sock', user='rcarlson', password='', database='moocdb'):
     '''
         NOTE: right now (2013-11-29) localhost doesn't resolve properly so we
               need to point to the socket file address. hopefully in the future we
               can get the host working so that we don't have to specify this ugly
               file handle.
     '''
-    db = MySQLdb.connect(
-            unix_socket=unix_sock,
-            #host=host,
+    try:
+        db = MySQLdb.connect(
+            host=host,
             user=user,
             passwd=password,
             db=database)
+    except:
+        db = MySQLdb.connect(
+            unix_socket=unix_sock,
+            user=user,
+            passwd=password,
+            db=database)
+
     return db
 
 def insert_into_table(cursor, table, columns, values):
