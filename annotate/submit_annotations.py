@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys, os
+import sys, os, shutil
 import dbutils
 
 try:
@@ -32,6 +32,8 @@ def run(annotation_dir):
     for annotation in annotations:
         annotation.insert(cursor)
     db.commit()
+
+    shutil.rmtree(annotation_dir)
 
 def main(args):
     if len(args[1:]) != 1:
