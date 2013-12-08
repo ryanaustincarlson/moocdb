@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Extract Text</title>
+    </head>
+    
+    <body>
+        <form method="post" action="/extract_text" enctype="multipart/form-data">
+            <label>Username: <input type="text" name="username" value=""></label><br>
+            <label>SELECT statement (SQL query): <input type="text" name="query" value=""></label><br>
+            <label>BRAT Annotation configuration file: <input type="file" name="config"></label><br>
+            <input type="submit" value="Extract Text!">
+        </form>
+    </body>
+</html>
+

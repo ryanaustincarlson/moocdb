@@ -1,0 +1,21 @@
+
+<html>
+    <head>
+        <title>Submit Annotations</title>
+    </head>
+    
+    <body>
+
+        Files ready to be annotated!<br>
+        Point BRAT at %s.<br>
+        If the BRAT server is already running, it should be accessible at <a href="http://127.0.0.1:8001/" target="_blank">localhost:8001/</a> or <a href="http://conversation.lti.cs.cmu.edu:8001/" target="_blank">http://conversation.lti.cs.cmu.edu:8001/</a>.<br>
+        When you're done annotating, load them back into the database by clicking the button below.
+
+        <form method="post" action="/submit_annotations">
+            <input type="hidden" name="basedir" value="%s">
+            <input type="hidden" name="username" value="%s">
+            <input type="submit" value="Submit Annotations!">
+        </form>
+    </body>
+</html>
+
