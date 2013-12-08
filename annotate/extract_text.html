@@ -10,6 +10,13 @@
             <label>BRAT Annotation configuration file: <input type="file" name="config"></label><br>
             <input type="submit" value="Extract Text!">
         </form>
+        <br><br>
+        A couple notes:
+        <li>Username is not for any authentication, it's just to uniquely identify you as an annotator in the database. If you want to see all of your previous annotations, make sure to use the same username</li>
+        <li>The SELECT statement should be something like "SELECT text_id, raw_text FROM moocdb.posts, moocdb.texts where posts.text_id = texts.id and posts.source_id = 1;"</li>
+        <li>You can try out SELECT statements in MySQLWorkbench, and then just copy over the statement you want. But basically, you should always return EXACTLY (text_id, raw_text)</li> 
+        <li>For more details on the BRAT Annotation config file, see <a href=http://brat.nlplab.org/configuration.html#annotation-configuration target="_blank">their webpage</a>
+        <li>The application will return "Application Error" if you don't fill in all this info</li>
     </body>
 </html>
 
