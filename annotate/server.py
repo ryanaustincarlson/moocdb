@@ -1,6 +1,11 @@
 
-import os
-from itty import *
+import os, sys
+
+try:
+    from itty import *
+except:
+    sys.stderr.write("It looks like itty isn't installed! Install from https://github.com/toastdriven/itty\n")
+    sys.exit(2)
 
 import extract_text, submit_annotations
 
