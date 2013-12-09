@@ -37,7 +37,10 @@ class Text:
         annotation_file.close()
 
 def run(username, sql_query):
-    basedir = '/tmp/annotate-' + username + '-' + datetime.strftime(datetime.now(), "%Y%m%d_%H%M%S")
+
+    home = os.path.expanduser('~')
+    brat = os.path.join(home, 'local/software/brat-v1.3_Crunchy_Frog/data')
+    basedir = brat + '/annotate-' + username + '-' + datetime.strftime(datetime.now(), "%Y%m%d_%H%M%S")
 
     db = dbutils.get_database_connection()
     cursor = db.cursor()
