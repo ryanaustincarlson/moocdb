@@ -14,7 +14,7 @@ This is mostly for users who want to play with their own data on their own local
 
 It's really easy to download MySQL and get it up and running. Head over to their [downloads page](http://dev.mysql.com/downloads/) to get started. The MySQL Community Server page will let you run your own local server if you're into that. If you just want to connect to a remote database, download the MySQL Workbench, which will let you explore the database with a graphical user interface.
 
-### Installing PG8000
+### Installing MySQLdb
 
 Since our raw scraped files are in json and csv, we are using python to manipulate them and prepare them for the database. Python is great at manipulating these files, but can't talk directly to MySQL. There are a ton of drivers that link Python to MySQL, but we chose MySQLdb for its transparency. You just have to write SQL code in python and it'll execute for you. While this binds us to MySQL, it lowers the barrier to entry, too. 
 
