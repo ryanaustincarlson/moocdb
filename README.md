@@ -32,3 +32,6 @@ If everyone went swimmingly, now it's time to open up your favorite MySQL client
 
 Now you're ready to run some queries! For those, we suggest you hop over to the [wiki](https://github.com/ryanaustincarlson/moocdb/wiki) and check out the [Common Queries page](https://github.com/ryanaustincarlson/moocdb/wiki/common-queries), and if you're unfamiliar with SQL you might take a look at our [cheat sheet](https://github.com/ryanaustincarlson/moocdb/wiki/MySQL-Cheat-Sheet).
 
+### What's next?
+
+Check out our [wiki](https://github.com/ryanaustincarlson/moocdb/wiki) to see more, including how to annotate your data.
