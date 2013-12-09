@@ -18,7 +18,7 @@ It's really easy to download MySQL and get it up and running. Head over to their
 
 Since our raw scraped files are in json and csv, we are using python to manipulate them and prepare them for the database. Python is great at manipulating these files, but can't talk directly to MySQL. There are a ton of drivers that link Python to MySQL, but we chose MySQLdb for its transparency. You just have to write SQL code in python and it'll execute for you. While this binds us to MySQL, it lowers the barrier to entry, too. 
 
-You can install MySQLdb from this site: <http://mysql-python.sourceforge.net/MySQLdb.html>
+You can install MySQLdb from this site: <http://sourceforge.net/projects/mysql-python/>. And here's the [User's Guide](http://mysql-python.sourceforge.net/MySQLdb.html).
 
 ### Exploring the DB with Fake Data!
 
