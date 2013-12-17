@@ -26,11 +26,15 @@ We've included some scripts to generate fake data for you and insert it into the
 
 First start by creating the tables in MySQL. Go to the root of this repository and run`./recreate_schema.sh oltp`
 
-Now go into the fakedata folder. Run `./generate_fakedata.py`. This should spew several JSON files full of forum-like data, with heavy plaigarism from War of the Worlds. Finally, run `./populate_db.py` to actually put all this stuff in the database.
+Now go into the `fakedata` folder. Run `./generate_fakedata.py`. This should spew several JSON files full of forum-like data, with heavy plaigarism from War of the Worlds. Finally, run `./populate_db.py` to actually put all this stuff in the database. For more info on the `populate_db` script, run `./populate_db.py -h` to see how to send your MySQL login credentials to the script.
 
 If everyone went swimmingly, now it's time to open up your favorite MySQL client and start exploring. As previously mentioned, we recommend MySQL Workbench.
 
 Now you're ready to run some queries! For those, we suggest you hop over to the [wiki](https://github.com/ryanaustincarlson/moocdb/wiki) and check out the [Common Queries page](https://github.com/ryanaustincarlson/moocdb/wiki/common-queries), and if you're unfamiliar with SQL you might take a look at our [cheat sheet](https://github.com/ryanaustincarlson/moocdb/wiki/MySQL-Cheat-Sheet).
+
+### Annotating Data
+
+If you're interested in annotating your data, check out the `annotate` folder.  There is an itty server that you can run locally that guides you through setting up annotations. You also need to have an instance of the BRAT Rapid Annotation Tool running. See our [wiki page](https://github.com/ryanaustincarlson/moocdb/wiki/annotations) for more details.
 
 ### What's next?
 
