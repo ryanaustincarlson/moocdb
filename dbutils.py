@@ -1,8 +1,7 @@
 import MySQLdb
 import sys
 
-#def get_database_connection(host='localhost', user='rcarlson', password='', database='moocdb'):
-def get_database_connection(host='localhost', unix_sock='/var/tmp/mysql.sock', user='rcarlson', password='', database='moocdb'):
+def get_database_connection(host='localhost', unix_sock='/var/tmp/mysql.sock', user='root', password='', database='moocdb'):
     '''
         NOTE: right now (2013-11-29) localhost doesn't resolve properly so we
               need to point to the socket file address. hopefully in the future we
