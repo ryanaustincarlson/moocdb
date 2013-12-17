@@ -26,7 +26,14 @@ class Text:
 
         # get annotations
         annotation_file = open(os.path.join(basedir, self.text_id + '.ann'), 'a')
-        cursor.execute("SELECT start_pos, end_pos, annotation_type FROM text_annotations WHERE text_id = %s AND annotator = '%s';" % (int(self.text_id), username))
+
+        sql_select = "SELECT start_pos, end_pos, annotation_type FROM text_annotations WHERE text_id = %s" % int(self.text_id)
+        if username != '*':
+            sql_select += " AND annotator = '%s';" % username
+        sql_select += ";"
+        cursor.execute(sql_select)
+
+        #cursor.execute("SELECT start_pos, end_pos, annotation_type FROM text_annotations WHERE text_id = %s AND annotator = '%s';" % (int(self.text_id), username))
         annotations = cursor.fetchall()
         count = 1
         for start, end, label in annotations:
