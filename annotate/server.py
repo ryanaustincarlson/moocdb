@@ -37,4 +37,4 @@ def submit_annotations_post(request):
 
     return "Done! Check the database, your annotations should be uploaded!"
 
-run_itty()
+run_itty(host='0.0.0.0')
