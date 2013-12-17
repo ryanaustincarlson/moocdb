@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys
+import sys, argparse
 try:
     import json
 except:
@@ -130,8 +130,7 @@ def add_posts(cursor, posts, source_id, forum_ids, user_ids):
 
     return post_ids
         
-
-def main():
+def main(args):
 
     def load_data(fname):
         try:
@@ -149,7 +148,7 @@ def main():
 
     db = None
     try:
-        db = dbutils.get_database_connection()
+        db = dbutils.get_database_connection(user=args.username, password=args.password)
         cursor = db.cursor()
 
         source_id = add_sources(cursor, sources)
@@ -159,12 +158,19 @@ def main():
         
 
         db.commit()   
-
+    except:
+        sys.stderr.write("It looks like you can't connect to the database! Run the script with the -h command to see how to fix this\n")
 
     finally:
         if db is not None:
             db.close()
 
+def get_parser():
+    parser = argparse.ArgumentParser(description="Populate the database with simulated data so you can play around with the schema")
+    parser.add_argument('-u','--username', default='root', help='database username (default: %(default)s)', required=False)
+    parser.add_argument('-p','--password', default='', help='database password (default: <empty-string>)', required=False)
+    return parser.parse_args()
+
 if __name__ == '__main__':
-    main()
+    sys.exit(main(get_parser()))
 
