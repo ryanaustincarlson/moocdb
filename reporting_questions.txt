@@ -1,0 +1,13 @@
+
+Possible Reporting Questions
+----------------------------
+
+* Which users have communicated most in the last couple of weeks with
+  each other?
+
+Things to know further
+----------------------
+
+* What are requirements on text annotations?
+* Doesn't include the concept of "follows topic/people" yet
+
