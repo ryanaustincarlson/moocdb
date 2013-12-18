@@ -133,7 +133,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='detail'>thread_id</td>
+ <td class='detail'>forum_id</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
@@ -143,9 +143,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="posts.thread_id refs threads.id via posts_thread_id_fkey"><a href='threads.html'>threads</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="posts.forum_id refs forums.id via posts_forum_id_fkey"><a href='forums.html'>forums</a><span class='relatedKey'>.id</span>
     </td>
-    <td class='constraint detail'>posts_thread_id_fkey<span title='Restrict delete:
+    <td class='constraint detail'>posts_forum_id_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
@@ -153,7 +153,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>created_user_id</td>
+ <td class='detail'>user_id</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
@@ -163,9 +163,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="posts.created_user_id refs users.id via posts_created_user_id_fkey"><a href='users.html'>users</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="posts.user_id refs users.id via posts_user_id_fkey"><a href='users.html'>users</a><span class='relatedKey'>.id</span>
     </td>
-    <td class='constraint detail'>posts_created_user_id_fkey<span title='Restrict delete:
+    <td class='constraint detail'>posts_user_id_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
@@ -234,8 +234,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 <tr class='odd'>
  <td class='detail'>created_at</td>
- <td class='detail'>timestamp</td>
- <td class='detail' align='right'>29,6</td>
+ <td class='detail'>int4</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
@@ -255,7 +255,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='8 columns'>Table contained 0 rows at Sun Nov 10 18:22 EST 2013<p/>
+<p title='8 columns'>Table contained 17 rows at Wed Dec 18 15:17 EST 2013<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -281,28 +281,27 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from posts'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="post_user_references.html" title="post_user_references" alt="" coords="647,5,822,144">
-<area shape="rect" id="node2" href="posts.html" title="posts" alt="" coords="350,187,602,458">
-<area shape="rect" id="node3" href="users.html" title="users" alt="" coords="6,96,130,285">
-<area shape="rect" id="node5" href="sources.html" title="sources" alt="" coords="7,307,129,421">
-<area shape="rect" id="node6" href="texts.html" title="texts" alt="" coords="7,445,129,558">
-<area shape="rect" id="node7" href="threads.html" title="threads" alt="" coords="175,199,305,439">
-<area shape="rect" id="node4" href="post_votes.html" title="post_votes" alt="" coords="671,163,799,352">
+<area shape="rect" id="node1" href="forums.html" title="forums" alt="" coords="165,5,315,176">
+<area shape="rect" id="node2" href="sources.html" title="sources" alt="" coords="6,107,119,210">
+<area shape="rect" id="node3" href="post_user_references.html" title="post_user_references" alt="" coords="655,103,830,228">
+<area shape="rect" id="node4" href="posts.html" title="posts" alt="" coords="360,98,611,342">
+<area shape="rect" id="node5" href="users.html" title="users" alt="" coords="178,351,302,521">
+<area shape="rect" id="node7" href="texts.html" title="texts" alt="" coords="175,230,305,333">
+<area shape="rect" id="node6" href="post_votes.html" title="post_votes" alt="" coords="679,269,807,440">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/posts.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="forums.html" title="forums" alt="" coords="173,388,302,476">
-<area shape="rect" id="node2" href="sources.html" title="sources" alt="" coords="6,389,127,502">
-<area shape="rect" id="node3" href="post_user_references.html" title="post_user_references" alt="" coords="841,365,1015,504">
-<area shape="rect" id="node4" href="posts.html" title="posts" alt="" coords="543,418,795,689">
-<area shape="rect" id="node5" href="users.html" title="users" alt="" coords="175,181,299,371">
-<area shape="rect" id="node7" href="texts.html" title="texts" alt="" coords="176,618,299,731">
-<area shape="rect" id="node8" href="threads.html" title="threads" alt="" coords="358,324,487,564">
-<area shape="rect" id="node6" href="post_votes.html" title="post_votes" alt="" coords="864,144,992,333">
-<area shape="rect" id="node9" href="text_annotations.html" title="text_annotations" alt="" coords="347,653,498,741">
-<area shape="rect" id="node10" href="thread_tags.html" title="thread_tags" alt="" coords="603,288,735,376">
-<area shape="rect" id="node11" href="user_info.html" title="user_info" alt="" coords="361,111,485,199">
-<area shape="rect" id="node12" href="user_source.html" title="user_source" alt="" coords="357,5,489,93">
+<area shape="rect" id="node1" href="forums.html" title="forums" alt="" coords="165,73,315,244">
+<area shape="rect" id="node2" href="sources.html" title="sources" alt="" coords="6,230,119,333">
+<area shape="rect" id="node3" href="post_user_references.html" title="post_user_references" alt="" coords="655,408,830,533">
+<area shape="rect" id="node4" href="posts.html" title="posts" alt="" coords="360,127,611,371">
+<area shape="rect" id="node5" href="users.html" title="users" alt="" coords="178,429,302,600">
+<area shape="rect" id="node7" href="texts.html" title="texts" alt="" coords="175,298,305,401">
+<area shape="rect" id="node6" href="post_votes.html" title="post_votes" alt="" coords="679,145,807,316">
+<area shape="rect" id="node8" href="text_annotations.html" title="text_annotations" alt="" coords="406,389,565,469">
+<area shape="rect" id="node9" href="threads.html" title="threads" alt="" coords="421,5,550,85">
+<area shape="rect" id="node10" href="user_info.html" title="user_info" alt="" coords="419,559,551,639">
+<area shape="rect" id="node11" href="user_source.html" title="user_source" alt="" coords="419,656,551,736">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/posts.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
