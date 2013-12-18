@@ -1,5 +1,5 @@
 
-import os, sys
+import os, sys, argparse
 
 try:
     from itty import *
@@ -25,7 +25,8 @@ def extract_text_post(request):
     serverside_configfile.write(config_contents)
     serverside_configfile.close()
 
-    html = open('submit_annotations.html').read() % (basedir, basedir, username)
+    annotation_dir = os.path.basename(basedir)
+    html = open('submit_annotations.html').read().format(url=args.url, port=args.port, annotation_dir=annotation_dir, basedir=basedir, username=username)
     return html
 
 @post('/submit_annotations')
@@ -36,5 +37,10 @@ def submit_annotations_post(request):
     submit_annotations.run(basedir)
 
     return "Done! Check the database, your annotations should be uploaded!"
+
+parser = argparse.ArgumentParser(description="itty server to facilitate annotations using BRAT")
+parser.add_argument('-u','--url', default='127.0.0.1', help='BRAT url (default: %(default)s)', required=False)
+parser.add_argument('-p','--port', default='8001', help='BRAT port (default: %(default)s)', required=False)
+args = parser.parse_args()
 
 run_itty(host='0.0.0.0')

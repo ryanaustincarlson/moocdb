@@ -158,8 +158,8 @@ def main(args):
         
 
         db.commit()   
-    except:
-        sys.stderr.write("It looks like you can't connect to the database! Run the script with the -h command to see how to fix this\n")
+    #except:
+        #sys.stderr.write("It looks like you can't connect to the database! Run the script with the -h command to see how to fix this\n")
 
     finally:
         if db is not None:
