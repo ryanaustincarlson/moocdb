@@ -1,12 +1,16 @@
+user_data_measure
 user_source
 user_info
 post_votes
 post_user_references
 thread_tags
 text_annotations
-threads
 posts
+threads
 forums
+user_dimension
+time_dimension
+source_dimension
 texts
 sources
 users

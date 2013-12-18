@@ -1,4 +1,4 @@
-// dot 2.32.0 on Mac OS X 10.8.5
+// dot 2.34.0 on Mac OS X 10.8.3
 // SchemaSpy rev 590
 digraph "largeRelationshipsDiagram" {
   graph [
@@ -27,8 +27,7 @@ digraph "largeRelationshipsDiagram" {
       <TR><TD PORT="parent_forum_id" COLSPAN="3" ALIGN="LEFT">parent_forum_id</TD></TR>
       <TR><TD PORT="source_id" COLSPAN="3" ALIGN="LEFT">source_id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
-      <TR><TD PORT="external_id" COLSPAN="3" ALIGN="LEFT">external_id</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="tables/forums.html"
     tooltip="forums"
@@ -64,17 +63,28 @@ digraph "largeRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">posts</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="forum_id" COLSPAN="3" ALIGN="LEFT">forum_id</TD></TR>
-      <TR><TD PORT="user_id" COLSPAN="3" ALIGN="LEFT">user_id</TD></TR>
+      <TR><TD PORT="thread_id" COLSPAN="3" ALIGN="LEFT">thread_id</TD></TR>
+      <TR><TD PORT="created_user_id" COLSPAN="3" ALIGN="LEFT">created_user_id</TD></TR>
       <TR><TD PORT="parent_post_id" COLSPAN="3" ALIGN="LEFT">parent_post_id</TD></TR>
       <TR><TD PORT="source_id" COLSPAN="3" ALIGN="LEFT">source_id</TD></TR>
       <TR><TD PORT="text_id" COLSPAN="3" ALIGN="LEFT">text_id</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">17 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="tables/posts.html"
     tooltip="posts"
+  ];
+  "source_dimension" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">source_dimension</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/source_dimension.html"
+    tooltip="source_dimension"
   ];
   "sources" [
     label=<
@@ -82,7 +92,7 @@ digraph "largeRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">sources</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 row</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="tables/sources.html"
     tooltip="sources"
@@ -96,7 +106,7 @@ digraph "largeRelationshipsDiagram" {
       <TR><TD PORT="start_pos" COLSPAN="3" ALIGN="LEFT">start_pos</TD></TR>
       <TR><TD PORT="end_pos" COLSPAN="3" ALIGN="LEFT">end_pos</TD></TR>
       <TR><TD PORT="annotation_type" COLSPAN="3" ALIGN="LEFT">annotation_type</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">17 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tables/text_annotations.html"
     tooltip="text_annotations"
@@ -107,7 +117,7 @@ digraph "largeRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">texts</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="raw_text" COLSPAN="3" ALIGN="LEFT">raw_text</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">17 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="tables/texts.html"
     tooltip="texts"
@@ -137,10 +147,54 @@ digraph "largeRelationshipsDiagram" {
       <TR><TD PORT="source_id" COLSPAN="3" ALIGN="LEFT">source_id</TD></TR>
       <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
       <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="tables/threads.html"
     tooltip="threads"
+  ];
+  "time_dimension" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">time_dimension</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="year" COLSPAN="3" ALIGN="LEFT">year</TD></TR>
+      <TR><TD PORT="month" COLSPAN="3" ALIGN="LEFT">month</TD></TR>
+      <TR><TD PORT="week" COLSPAN="3" ALIGN="LEFT">week</TD></TR>
+      <TR><TD PORT="day" COLSPAN="3" ALIGN="LEFT">day</TD></TR>
+      <TR><TD PORT="hour" COLSPAN="3" ALIGN="LEFT">hour</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/time_dimension.html"
+    tooltip="time_dimension"
+  ];
+  "user_data_measure" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">user_data_measure</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="source_id" COLSPAN="3" ALIGN="LEFT">source_id</TD></TR>
+      <TR><TD PORT="time_id" COLSPAN="3" ALIGN="LEFT">time_id</TD></TR>
+      <TR><TD PORT="user_id" COLSPAN="3" ALIGN="LEFT">user_id</TD></TR>
+      <TR><TD PORT="key" COLSPAN="3" ALIGN="LEFT">key</TD></TR>
+      <TR><TD PORT="value" COLSPAN="3" ALIGN="LEFT">value</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/user_data_measure.html"
+    tooltip="user_data_measure"
+  ];
+  "user_dimension" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">user_dimension</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD PORT="age" COLSPAN="3" ALIGN="LEFT">age</TD></TR>
+      <TR><TD PORT="gender" COLSPAN="3" ALIGN="LEFT">gender</TD></TR>
+      <TR><TD PORT="website1" COLSPAN="3" ALIGN="LEFT">website1</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/user_dimension.html"
+    tooltip="user_dimension"
   ];
   "user_info" [
     label=<
@@ -151,7 +205,7 @@ digraph "largeRelationshipsDiagram" {
       <TR><TD PORT="user_id" COLSPAN="3" ALIGN="LEFT">user_id</TD></TR>
       <TR><TD PORT="key" COLSPAN="3" ALIGN="LEFT">key</TD></TR>
       <TR><TD PORT="value" COLSPAN="3" ALIGN="LEFT">value</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">10 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tables/user_info.html"
     tooltip="user_info"
@@ -164,7 +218,7 @@ digraph "largeRelationshipsDiagram" {
       <TR><TD PORT="source_id" COLSPAN="3" ALIGN="LEFT">source_id</TD></TR>
       <TR><TD PORT="user_id" COLSPAN="3" ALIGN="LEFT">user_id</TD></TR>
       <TR><TD PORT="username" COLSPAN="3" ALIGN="LEFT">username</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tables/user_source.html"
     tooltip="user_source"
@@ -178,7 +232,7 @@ digraph "largeRelationshipsDiagram" {
       <TR><TD PORT="age" COLSPAN="3" ALIGN="LEFT">age</TD></TR>
       <TR><TD PORT="gender" COLSPAN="3" ALIGN="LEFT">gender</TD></TR>
       <TR><TD PORT="website1" COLSPAN="3" ALIGN="LEFT">website1</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="tables/users.html"
     tooltip="users"
@@ -189,17 +243,20 @@ digraph "largeRelationshipsDiagram" {
   "post_user_references":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "post_votes":"post_id":w -> "posts":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "post_votes":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "posts":"forum_id":w -> "forums":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "posts":"created_user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "posts":"parent_post_id":w -> "posts":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "posts":"source_id":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "posts":"text_id":w -> "texts":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "posts":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "posts":"thread_id":w -> "threads":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "text_annotations":"text_id":w -> "texts":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "thread_tags":"thread_id":w -> "threads":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "threads":"forum_id":w -> "forums":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "threads":"source_id":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "threads":"text_id":w -> "texts":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "threads":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "user_data_measure":"source_id":w -> "source_dimension":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "user_data_measure":"time_id":w -> "time_dimension":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "user_data_measure":"user_id":w -> "user_dimension":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "user_info":"source_id":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "user_info":"user_id":w -> "users":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "user_source":"source_id":w -> "sources":"id":e [arrowhead=none dir=back arrowtail=crowodot];
