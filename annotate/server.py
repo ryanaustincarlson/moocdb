@@ -41,6 +41,15 @@ def submit_annotations_post(request):
 parser = argparse.ArgumentParser(description="itty server to facilitate annotations using BRAT")
 parser.add_argument('-u','--url', default='127.0.0.1', help='BRAT url (default: %(default)s)', required=False)
 parser.add_argument('-p','--port', default='8001', help='BRAT port (default: %(default)s)', required=False)
+
 args = parser.parse_args()
+
+if parser.get_default('url') == args.url and parser.get_default('port') == args.port:
+    if not sys.argv[0].startswith("./"):
+        script_call = "python " 
+    script_call += "%s -h" % sys.argv[0]
+
+    sys.stderr.write("LOG: It looks like you're using the default parameters for the BRAT server location (%s:%s).\nLOG: Run `%s` for more details.\n\n" % (args.url, args.port, script_call))
+        
 
 run_itty(host='0.0.0.0')
