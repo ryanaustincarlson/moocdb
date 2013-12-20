@@ -2,39 +2,7 @@
 
 set -u
 
-usage() {
-  echo -e 'Drops the DB and recreates the schema.'
-  echo -e 'Usage:'
-  echo -e 'script [ oltp | olap ]'
-}
-
-recreate_oltp() {
-  echo "drop database moocdb" | mysql -u root
-  echo "create database moocdb" | mysql -u root
-  mysql -u root -D moocdb < create_oltp_schema_forums.sql
-  # ./setup_db_permissions.sh
-}
-
-recreate_olap() {
-  echo "drop database moocdb_olap" | mysql -u root
-  echo "create database moocdb_olap" | mysql -u root
-  mysql -u root -D moocdb_olap < create_olap_star_schema_forums.sql
-}
-
-if [ "$#" -ne 1 ]; then
-  usage
-  exit 1
-fi
-
-case "$1" in
-  "oltp" )
-    recreate_oltp
-    ;;
-  "olap" )
-    recreate_olap
-    ;;
-  * )
-    usage
-    ;;
-esac
+echo "drop database moocdb" | mysql -u root
+echo "create database moocdb" | mysql -u root
+mysql -u root -D moocdb < create_oltp_schema_forums.sql
 
