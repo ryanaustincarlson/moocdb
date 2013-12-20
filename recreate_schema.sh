@@ -9,16 +9,16 @@ usage() {
 }
 
 recreate_oltp() {
-  echo "drop database moocdb" | mysql
-  echo "create database moocdb" | mysql
-  mysql -D moocdb < create_oltp_schema_forums.sql
+  echo "drop database moocdb" | mysql -u root
+  echo "create database moocdb" | mysql -u root
+  mysql -u root -D moocdb < create_oltp_schema_forums.sql
   # ./setup_db_permissions.sh
 }
 
 recreate_olap() {
-  echo "drop database moocdb_olap" | mysql
-  echo "create database moocdb_olap" | mysql
-  mysql -D moocdb_olap < create_olap_star_schema_forums.sql
+  echo "drop database moocdb_olap" | mysql -u root
+  echo "create database moocdb_olap" | mysql -u root
+  mysql -u root -D moocdb_olap < create_olap_star_schema_forums.sql
 }
 
 if [ "$#" -ne 1 ]; then
