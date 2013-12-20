@@ -7,9 +7,8 @@
     <body>
 
         Files ready to be annotated!<br>
-        Point BRAT at {annotation_dir}.<br>
-        If the BRAT server is already running, it should be accessible at <a href="{url}:{port}" target="_blank">{url}:{port}/</a>. <br>
-        When you're done annotating, load them back into the database by clicking the button below.
+        If the BRAT server is already running, it should be accessible at <a href="{url}:{port}/index.xhtml#/{annotation_dir}" target="_blank">{url}</a>. <br>
+        When you're done annotating, load them back into the database by <b>clicking the button below</b>.
 
         <form method="post" action="/submit_annotations">
             <input type="hidden" name="basedir" value="{basedir}">
